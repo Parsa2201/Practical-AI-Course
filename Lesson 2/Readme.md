@@ -1,50 +1,56 @@
 # Lesson 2
-In this lesson, we are going to understand what is a searching algorithm. Before that, let's talk about what is a graph.
+In this lesson, we will learn what a searching algorithm is. But before that, let’s first understand what a graph is.
 
 ## What is a graph?
-Imagine instagram. There are some people, and each person can follow another person. This is called a Graph. In a graph, there are a set of entities called Nodes (like the people in instagram). These nodes can be connected to each other. The connections are called Edge (like the followings in instagram). You may follow a well-known acter, but he probably will not follow you. This is called a directed edge; meaning that a node may have an edge to another one, but the opposite direction may be unavailable.
+Imagine Instagram. There are many users, and each user can follow other users. This is an example of a graph. In a graph, there are entities called nodes (like Instagram users), which can be connected to each other. These connections are called edges (like the “follow” relationships on Instagram). 
+
+For example, you may follow a popular actor, but they may not follow you back. This is called a directed edge, meaning a connection exists in one direction but not necessarily in the opposite direction.
 
 ## How to construct a graph?
-Now that we know about a graph, we can model many every-day problems into graphs. Assume we are given a maze like this:
+Now that we understand graphs, we can model many real-world problems using them. Suppose we are given a maze like this:
 ![A simple maze](https://github.com/MAN1986/pyamaze/blob/main/Picture1.png)
 
-And we want to go from the bottom right corner to the green square. How are we going to do that? The answer is to search for the path from the start position to the end position. We can make the graph representation of this maze. For each node (square), we connect it to nodes that is next to them and there's no wall between them. This means we can go from this node to that other node by only one move. But now comes the real question: how we can find this path? And probably the optimal one?
+Our goal is to go from the bottom-right corner to the green square. How can we do that? The answer is searching for a path from the start position to the goal.
+
+We can represent this maze as a graph. Each cell is a node, and we connect it to adjacent cells that are not blocked by walls. This means we can move from one node to another in a single step.
+
+But the real question is: how do we find this path, and preferably the optimal one?
 
 ## The A star game
-There are many algorithms that can do this for us. The most widely-used one is called the $A^\star$ algorithm. For getting familiar with how it works, let's play a game!
+There are many algorithms to solve this problem, and the most widely used is the $A^\star$ algorithm. To get familiar with how it works, try this interactive game:
 
 [The A star game](https://pathfindingdemo.gamelet.online)
 
 ## A star coding
-Now that you have a basic understanding of the $A^\star$ algorithm, let's do a simple code example using an already-written library.
+Now that you have a basic understanding of the $A^\star$ algorithm, let’s look at a simple coding example using existing libraries.
 
 ### PyMaze
-Pymaze is a simple python game that has a built-in maze (as you saw one of its mazes earlier). The coordinates system in this maze workd is like this:
+`pymaze` is a Python library with built-in mazes (like the one shown above). The coordinate system in this maze works like this:
 ![Coordinate System](https://github.com/MAN1986/pyamaze/blob/main/Picture3.png)
 
-To run it, install the `pyamaze` package as explained in the Homework section. Then run this code:
+To run it, install the `pyamaze` package as explained in the Homework section, then run this code:
 ```python
 from pyamaze import maze
 m=maze(10,10)
 m.CreateMaze()
 m.run()
 ```
-It will show a random maze. For further reading please refer to the main documentation:
+This will show a random maze. For more details please refer to the official documentation:
 [PyMaze Library](https://github.com/MAN1986/pyamaze?tab=readme-ov-file)
 
-### Networkx
-`networkx` is a python library that gives you the option to create a graph and do some calculations on that graph. And the calculation we talk about is the $A^\star$ function.
+### NetworkX
+`networkx` is a Python library for creating graphs and performing calculations on them. Here, we will use it to implement the $A^\star$ algorithm.
 
 1. Create a graph:
 ```python
 import networkx
 G = networkx.Graph()
 ```
-2. Add some nodes to your graph:
+2. Add nodes to the graph:
 ```python
 G.add_node(node)
 ```
-3. Add adges to your graph (an edge is the connection between two nodes):
+3. Add edges between nodes (edges represent connections between nodes):
 ```python
 G.add_edge(nodeA, nodeB)
 ```
@@ -57,18 +63,22 @@ path_coords = nx.astar_path(
         heuristic=heuristic
     )
 ```
-The `heuristic` should be a function that given two nodes, it shold estimate the shortest possible distance they have from each other.
+The `heuristic` is a function that estimates the shortest possible distance between two nodes.
 
-### Womework
-1. Install visual studio code, python, and jupiter notebook extention on your vscode if you haven't.
-2. Open a new jupiter notebook file, select a python interpreter, and then save your file.
-3. Install libraries `pyamaze` and `networkx`using this command in your terminal:
+## Womework
+1. Install Visual Studio Code, Python, and Jupiter Notebook extention if you haven't already.
+2. Open a new Jupiter Notebook file, select a python interpreter, and save your file.
+3. Install the required libraries using this terminal command:
 ```bash
 pip install pyamaze
 pip install networkx
 ```
-If may want to install these using your jupiter notebook, add ! mark before each and run the cell.
-4. Copy this code into your notebook (try putting each code section in a different code cell, so it is easier to run each seperately).
+If using Jupyter Notebook, add ! before each command:
+```python
+!pip install pyamaze
+!pip install networkx
+```
+4. Copy the following code into your notebook (split each section into separate cells for easier execution):
 ```python
 from pyamaze import maze, agent
 import networkx
@@ -129,7 +139,7 @@ class MazeGraph:
         
         return {self._agent: path_string}
 ```
-5. Implement these two functions using `networkx` and the basic knowledge you have about what is a heuristic:
+5. Implement these two functions using `networkx` and your understanding of heuristics:
 ```python
 def heuristic(cell1, cell2):
     # Your code
@@ -147,7 +157,7 @@ m.CreateMaze()
 solver_toolkit = MazeGraph(m)
 solution_path = solve_maze(solver_toolkit)
 ```
-8. Run the game and see the agent slowly moving to the destination:
+8. Run the game and see the agent slowly move to the destination:
 ```python
 a=agent(m,filled=True,footprints=True)
 # a.position=(5,4)
