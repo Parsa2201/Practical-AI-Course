@@ -1,14 +1,14 @@
 # Practical-AI-Course
-In this series of lessons, you will understand the basics of a veriaty of AI algorithms and models. You also learn basic usecases of libraries implemented these AIs. At the end of the course, you will have a basic understanding of what is AI, the famous algorithms in AI from 1950 until now, and how we can use them to solve problems using python.
+In this series of lessons, you will learn the basics of a veriaty of AI algorithms and models. You also explore basic usecases of libraries that implemented these AI methods. By the end of the course, you will have a foundational understanding of what AI is, the notable algorithms in AI from 1950 to the present, and how to use them to solve problems using Python.
 
-For this course you will have to:
-- have a basic understanding of python,
-- have motivation and be a self-learner.
+For this course, you should:
+- have a basic understanding of Python,
+- Be motivation and a self-learner.
 
 # Lessons
-The topics until now are:
+The topics covered so far are:
 ## 1. History of AI
-We talk about the path AI has gone through, from the basic AI agents and solvers, to the gigantic AIs and the most widely used AIs called LLMs.
+We explore the journey AI has taken, from simple AI agents and solvers to the large-scale AI systems widely used today, including LLMs (Large Language Models).
 
 ## 2. Search Algorithms
-We dive into what do we mean by searching, and the famous search algorithm called $A^\star$ . We see some examples and at the end solve a simple maze puzzle using the library `networkx` and its $A^\star$ algorithm.
+We dive into the concept of searching, and study the well-known algorithm called $A^\star$ . We see some examples and, by the end, solve a simple maze puzzle using the `networkx` library and its implementation of $A^\star$.
