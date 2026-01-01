@@ -160,7 +160,6 @@ solution_path = solve_maze(solver_toolkit)
 8. Run the game and see the agent slowly move to the destination:
 ```python
 a=agent(m,filled=True,footprints=True)
-# a.position=(5,4)
 m.tracePath(solution_path)
 m.run()
 ```
