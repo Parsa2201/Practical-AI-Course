@@ -11,4 +11,4 @@ The topics until now are:
 We talk about the path AI has gone through, from the basic AI agents and solvers, to the gigantic AIs and the most widely used AIs called LLMs.
 
 ## 2. Search Algorithms
-We dive into what do we mean by searching, and the famous search algorithm called $A^*$. We see some examples and at the end solve a simple maze puzzle using the library `networkx` and its $A^*$ algorithm.
+We dive into what do we mean by searching, and the famous search algorithm called $A^\star$ . We see some examples and at the end solve a simple maze puzzle using the library `networkx` and its $A^\star$ algorithm.
