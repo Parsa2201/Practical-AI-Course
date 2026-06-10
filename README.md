@@ -12,3 +12,6 @@ We explore the journey AI has taken, from simple AI agents and solvers to the la
 
 ## 2. Search Algorithms
 We dive into the concept of searching, and study the well-known algorithm called $A^\star$ . We see some examples and, by the end, solve a simple maze puzzle using the `networkx` library and its implementation of $A^\star$.
+
+## 3. Machine Learning Fundamentals
+We introduce the core ideas behind Machine Learning and how they differ from rule-based AI. In this lesson, we study datasets, features, and labels, and learn to think of ML models as functions that map inputs to predictions. We then explore the two main supervised learning tasks, regression and classification, and discuss how models measure mistakes using loss functions. Finally, we cover the ideas of training, train/validation/test splits, generalization, overfitting, underfitting, and the bias-variance tradeoff, building intuition for how to evaluate whether a model has truly learned a useful pattern from data.
